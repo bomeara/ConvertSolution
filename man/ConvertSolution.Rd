@@ -36,8 +36,9 @@ this point. This can also be included.
 }
 \examples{
 input <- c("# Count the number of tips", "phy <- ape::rcoal(15)",
- "print(Ntip(phy)) # Answer", "# Stop and think: How can you know this answer
- is correct?")
- output <- ConvertSolution(input)
+"print(Ntip(phy)) # Answer",
+"# Stop and think: How can you know this answer is correct?")
+output <- ConvertSolution(input)
+print(output)
 }
 

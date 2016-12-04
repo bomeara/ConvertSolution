@@ -21,17 +21,18 @@
 #'
 #' @examples
 #' input <- c("# Count the number of tips", "phy <- ape::rcoal(15)",
-#'  "print(Ntip(phy)) # Answer", "# Stop and think: How can you know this answer
-#'  is correct?")
-#'  output <- ConvertSolution(input)
+#' "print(Ntip(phy)) # Answer",
+#' "# Stop and think: How can you know this answer is correct?")
+#' output <- ConvertSolution(input)
+#' print(output)
 #' @export
 ConvertSolution <- function(x, answerstring='# Answer',
 hidestring='____add answer___', stopstring='# Stop and think: ', collapsemany=TRUE) {
   to.convert <- which(grepl(answerstring, x))
   x[grepl(answerstring, x)] <- hidestring
-  stop.indices <- grepl(stopstring, x)
+  stop.indices <- which(grepl(stopstring, x))
   for (i in sequence(length(stop.indices))) { #yeah, stupid. I welcome pull requests.
-    x[i] <- paste(gsub(stopstring, 'stop("', x[i]), ')')
+    x[stop.indices[i]] <- paste(gsub(stopstring, "stop('", x[stop.indices[i]]), "')")
   }
   to.delete <- c()
   if(collapsemany) {
