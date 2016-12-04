@@ -1,0 +1,14 @@
+Package: exerciseprocessor
+Type: Package
+Title: Creates Exercises From Answers
+Version: 0.1.0
+Author: Brian C. O'Meara
+Maintainer: Brian C. O'Meara <omeara.brian@gmail.com>
+Description: Create a complete answer, then use this package to convert it to an
+    exercise with sections for students to fill in.
+License: MIT License
+Encoding: UTF-8
+LazyData: true
+Suggests:
+    testthat
+RoxygenNote: 5.0.1
