@@ -21,9 +21,9 @@
 #'
 #' @examples
 #' input <- c("# Count the number of tips", "phy <- ape::rcoal(15)",
-#'  "print(Ntip(phy)) # Answer, "# Stop and think: How can you know this answer
+#'  "print(Ntip(phy)) # Answer", "# Stop and think: How can you know this answer
 #'  is correct?")
-#'  output <- ConvertSolution.R(input)
+#'  output <- ConvertSolution(input)
 #' @export
 ConvertSolution <- function(x, answerstring='# Answer',
 hidestring='____add answer___', stopstring='# Stop and think: ', collapsemany=TRUE) {
